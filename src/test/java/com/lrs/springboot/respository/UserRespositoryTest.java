@@ -1,6 +1,8 @@
 package com.lrs.springboot.respository;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,14 +16,17 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Commit;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.lrs.springboot.App;
 import com.lrs.springboot.model.User;
-
+/**
+ * 所有单元测试通过
+ * @author Swedish-li
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @Transactional
@@ -42,7 +47,7 @@ public class UserRespositoryTest {
 	}
 
 	/**
-	 * 没有 @Commit 注释，次单元测试会自动回滚
+	 * 没有 @Commit 注释，本次单元测试会自动回滚
 	 */
 	@Test
 	// @Commit
@@ -113,23 +118,33 @@ public class UserRespositoryTest {
 	}
 
 	@Test
+	@Rollback
 	public void testDeleteID() {
-		fail("Not yet implemented");
+		userRespository.delete(2L);
+		assertEquals(0L, userRespository.count());
 	}
 
 	@Test
+	@Rollback
 	public void testDeleteT() {
-		fail("Not yet implemented");
+		User user = new User(2L);
+		userRespository.delete(user);
+		assertEquals(0L,userRespository.count());
+		
 	}
 
 	@Test
+	@Rollback
 	public void testDeleteIterableOfQextendsT() {
-		fail("Not yet implemented");
+		userRespository.delete(Arrays.asList(new User(2L)));
+		assertEquals(0L,userRespository.count());
 	}
 
 	@Test
+	@Rollback
 	public void testDeleteAll() {
-		fail("Not yet implemented");
+		userRespository.deleteAll();
+		assertEquals(0L,userRespository.count());
 	}
 
 }
