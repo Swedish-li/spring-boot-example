@@ -1,9 +1,12 @@
 package com.lrs.springboot;
 
+import java.util.Date;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * spring boot 示例项目
@@ -12,12 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Swedish-li
  *
  */
-@RestController
+@Controller
 @SpringBootApplication
 public class App {
 	@RequestMapping("/")
-	public String index() {
-		return "this is simple spring boot example!";
+	public String index(ModelMap model) {
+		model.put("currentDatetime", new Date());
+		
+		return "index";
 	}
 
 	public static void main(String[] args) {
