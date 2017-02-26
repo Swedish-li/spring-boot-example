@@ -10,13 +10,16 @@
 	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 <body>
-	<div class="container">
+	<div class="container middle">
 		<div class="page-header">
 			<h1>Echarts Example</h1>
 			<h3>时间：${currentDatetime?datetime}</h3>
 		</div>
-		<div>
-			
+		<div class="wrapper">
+			<p>这里是图表区</p>
+		</div>
+		<div class="wrapper">
+			这里是图表区2
 		</div>
 		<footer class="footer">
 			<div class="container">
@@ -28,7 +31,7 @@
 	<script>
 		const ctx = '${ctx}'
 	</script>
-	<script src="http://apps.bdimg.com/libs/require.js/2.1.9/require.min.js" data-main="${ctx}/js/app"></script>
+	<script src="http://apps.bdimg.com/libs/require.js/2.1.9/require.min.js" data-main="${ctx}/main"></script>
 		
 </body>
 </html>
