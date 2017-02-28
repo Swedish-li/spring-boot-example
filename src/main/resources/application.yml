@@ -29,4 +29,11 @@ spring.freemarker:
   request-context-attribute: request
   suffix: .ftl
   
-  
+ #Jackson配置
+spring.jackson: 
+  serialization-inclusion: non_null
+  date-format: yyyy-MM-dd HH:mm:ss
+  default-property-inclusion: non_null
+  locale: zh_CN
+  time-zone: GMT+8
+  joda-date-time-format: yyyy-MM-dd HH:mm:ss

@@ -1,10 +1,13 @@
 package com.lrs.springboot.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -19,6 +22,8 @@ public class User {
 	private String email;
 	@NotNull
 	private String name;
+	@Transient
+	private Date birth;
 
 	public User(long id) {
 		super();
@@ -26,6 +31,14 @@ public class User {
 	}
 
 	public User() {
+	}
+	
+	public Date getBirth() {
+		return birth;
+	}
+
+	public void setBirth(Date birth) {
+		this.birth = birth;
 	}
 
 	public long getId() {

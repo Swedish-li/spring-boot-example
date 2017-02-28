@@ -1,5 +1,7 @@
 package com.lrs.springboot.controller;
 
+import java.util.Date;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,10 +16,22 @@ import com.github.abel533.echarts.code.Trigger;
 import com.github.abel533.echarts.data.PointData;
 import com.github.abel533.echarts.feature.MagicType;
 import com.github.abel533.echarts.series.Bar;
+import com.lrs.springboot.model.User;
 
 @RestController
 @RequestMapping("echarts")
 public class EchartsExampleController {
+	@RequestMapping("user")
+	public ResponseEntity<User> getUser() {
+		User user = new User(1);
+		Date now = new Date();
+		System.out.println(now);;
+		user.setBirth(now);
+		//user.setEmail("1123234@qq.com");
+		user.setName("jack");
+		return ResponseEntity.ok(user);
+	}
+
 	@RequestMapping("bar1")
 	public ResponseEntity<Option> bar1() {
 		Option option = new Option();

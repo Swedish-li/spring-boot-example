@@ -1,5 +1,7 @@
 package com.lrs.springboot.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +22,6 @@ public class Classroom {
 	@Length(max = 50)
 	private String name;
 	private String grade;
-
 	public int getId() {
 		return id;
 	}

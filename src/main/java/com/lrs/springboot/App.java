@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  * spring boot 示例项目
@@ -18,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  */
 @Controller
 @SpringBootApplication
-@EnableWebMvc
+//@EnableWebMvc
 public class App {
 	@RequestMapping("/")
 	public String index(ModelMap model) {
