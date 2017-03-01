@@ -10,13 +10,13 @@
 	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 <body>
-	<div class="container middle">
+	<div class="container">
 		<div class="page-header">
 			<h1>Echarts Example</h1>
 			<h3>时间：${currentDatetime?datetime}</h3>
 		</div>
 		<div class="wrapper">
-			<p>这里是图表区</p>
+			<div id="bar1" style="height:400px"></div>
 		</div>
 		<div class="wrapper">
 			这里是图表区2

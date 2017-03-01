@@ -37,3 +37,5 @@ spring.jackson:
   locale: zh_CN
   time-zone: GMT+8
   joda-date-time-format: yyyy-MM-dd HH:mm:ss
+  
+##hibernate validator整合

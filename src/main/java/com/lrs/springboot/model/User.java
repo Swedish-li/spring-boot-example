@@ -11,6 +11,11 @@ import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Table(name = "t_user")
 @Entity
@@ -21,8 +26,11 @@ public class User {
 	@NotNull
 	private String email;
 	@NotNull
+	@NotEmpty(message="姓名不可为空")
+	@Length(min=5,max=10,message="姓名长度在5-1之间")
 	private String name;
 	@Transient
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date birth;
 
 	public User(long id) {

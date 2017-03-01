@@ -2,7 +2,12 @@ package com.lrs.springboot.controller;
 
 import java.util.Date;
 
+import javax.validation.Valid;
+
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,11 +30,18 @@ public class EchartsExampleController {
 	public ResponseEntity<User> getUser() {
 		User user = new User(1);
 		Date now = new Date();
-		System.out.println(now);;
+		System.out.println(now);
+		;
 		user.setBirth(now);
-		//user.setEmail("1123234@qq.com");
+		// user.setEmail("1123234@qq.com");
 		user.setName("jack");
 		return ResponseEntity.ok(user);
+	}
+
+	@RequestMapping("valid")
+	public String valid(@Valid @ModelAttribute User user, ModelMap model, BindingResult result) {
+
+		return "测试成功";
 	}
 
 	@RequestMapping("bar1")
@@ -40,7 +52,7 @@ public class EchartsExampleController {
 		// 标签提示触发，轴线
 		option.tooltip().trigger(Trigger.axis);
 		// 图例
-		option.legend("蒸发量", "降水量");
+		option.legend("降水量", "蒸发量");
 		// 工具箱：数据视图，还原，作为图片保存
 		option.toolbox().show(true).feature(Tool.mark, Tool.dataView,
 				// 折线图，柱状图
@@ -59,9 +71,14 @@ public class EchartsExampleController {
 				new PointData("年最低", 2.3).xAxis(11).yAxis(3));
 		bar1.markLine().data(new PointData().type(MarkType.average).name("平均值"));
 		// 蒸发量
-
+		Bar bar2 = new Bar("蒸发量");
+		bar2.data(2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3);
+		// 统计数据添加
+		bar2.markPoint().data(new PointData().type(MarkType.max).name("最大值"),
+				new PointData().type(MarkType.min).name("最小值"));
+		bar2.markLine().data(new PointData().type(MarkType.average).name("平均值"));
 		// 添加数据
-		option.series(bar1);
+		option.series(bar1, bar2);
 		return ResponseEntity.ok(option);
 	}
 }
