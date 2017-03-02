@@ -8,6 +8,8 @@ spring.datasource:
   password: root
   driverClassName: com.mysql.jdbc.Driver
 
+#开启包的自动扫描
+entitymanager.packagesToScan: com.lrs.springboot.model
 #Spring jpa data配置
 spring.jpa:
   database: MYSQL

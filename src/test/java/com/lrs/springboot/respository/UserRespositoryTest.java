@@ -22,6 +22,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.lrs.springboot.App;
 import com.lrs.springboot.model.User;
+import com.lrs.springboot.repository.UserRespository;
 /**
  * 所有单元测试通过
  * @author Swedish-li
@@ -146,5 +147,17 @@ public class UserRespositoryTest {
 		userRespository.deleteAll();
 		assertEquals(0L,userRespository.count());
 	}
-
+	@Test
+	public void testLoadById(){
+		User user = userRespository.loadById(2L);
+		logger.info("user:{}",user);
+		assertNotNull(user);
+	}
+	@Test
+	public void testGetById() {
+		List<User> users = userRespository.getById(2L);
+		assertNotNull(users);
+		assertTrue(users instanceof ArrayList);
+		
+	}
 }
