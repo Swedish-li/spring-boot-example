@@ -39,8 +39,11 @@ public class EchartsExampleController {
 	}
 
 	@RequestMapping("valid")
-	public String valid(@Valid @ModelAttribute User user, ModelMap model, BindingResult result) {
-
+	public String valid(@Valid @ModelAttribute User user, BindingResult result) {
+		System.out.println(result);
+		if (result.hasErrors()) {
+			return result.getFieldError().getDefaultMessage();
+		}
 		return "测试成功";
 	}
 

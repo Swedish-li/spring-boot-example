@@ -45,7 +45,7 @@
 			<artifactId>ECharts</artifactId>
 			<version>3.0.0.2</version>
 		</dependency>
-
+		
 	</dependencies>
 	<build>
 		<plugins>

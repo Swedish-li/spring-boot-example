@@ -24,8 +24,8 @@ public class User {
 	@NotNull
 	private String email;
 	@NotNull
-	@NotEmpty(message="姓名不可为空")
-	@Length(min=5,max=10,message="姓名长度在5-1之间")
+	@NotEmpty(message="{name.not_null_err}")
+	@Length(min=5,max=10,message="{name.length_err}")
 	private String name;
 	@Transient
 	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
