@@ -21,7 +21,15 @@ import com.github.abel533.echarts.data.PointData;
 import com.github.abel533.echarts.feature.MagicType;
 import com.github.abel533.echarts.series.Bar;
 import com.lrs.springboot.model.User;
-
+/**
+ * Echarts配置项手册：http://echarts.baidu.com/option.html
+ * title:标题组件，包含主标题和副标题
+ * legend:图例组件
+ * toolbox:导出图片，数据视图，动态类型切换，数据区域缩放，重置
+ * tooltip:提示框组件
+ * @author liruishi
+ *
+ */
 @RestController
 @RequestMapping("echarts")
 public class EchartsExampleController {
@@ -49,7 +57,7 @@ public class EchartsExampleController {
 	@RequestMapping("bar1")
 	public ResponseEntity<Option> bar1() {
 		Option option = new Option();
-		// 标题，副标题
+		// 标题文档，副标题文档
 		option.title().text("某地区蒸发量和降水量").subtext("纯属虚构");
 		// 标签提示触发，轴线
 		option.tooltip().trigger(Trigger.axis);
@@ -79,7 +87,7 @@ public class EchartsExampleController {
 		bar2.markPoint().data(new PointData().type(MarkType.max).name("最大值"),
 				new PointData().type(MarkType.min).name("最小值"));
 		bar2.markLine().data(new PointData().type(MarkType.average).name("平均值"));
-		// 添加数据
+		// series：系列列表，每个系列通过type决定自己的类型
 		option.series(bar1, bar2);
 		return ResponseEntity.ok(option);
 	}
