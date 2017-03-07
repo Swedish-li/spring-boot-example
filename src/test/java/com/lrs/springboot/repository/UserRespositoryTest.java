@@ -1,4 +1,4 @@
-package com.lrs.springboot.respository;
+package com.lrs.springboot.repository;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

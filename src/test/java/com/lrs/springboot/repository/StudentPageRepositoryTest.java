@@ -10,6 +10,8 @@ import javax.transaction.Transactional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
@@ -20,6 +22,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.lrs.springboot.model.Student;
+import com.lrs.springboot.model.StudentBadDto;
+import com.lrs.springboot.model.StudentGoodDto;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
@@ -28,6 +32,9 @@ import com.lrs.springboot.model.Student;
 public class StudentPageRepositoryTest {
 	@Autowired
 	private StudentPageRepository repository;
+
+	Logger logger = LoggerFactory.getLogger(StudentPageRepositoryTest.class);
+
 	/**
 	 * 分页查询
 	 */
@@ -42,10 +49,9 @@ public class StudentPageRepositoryTest {
 
 	@Test
 	public void testFindAllSort() {
-		List<Student> list = (List<Student>) repository.findAll(new Sort(Sort.Direction.ASC,"name"));
+		List<Student> list = (List<Student>) repository.findAll(new Sort(Sort.Direction.ASC, "name"));
 		System.out.println(list);
 	}
-
 
 	@Commit
 	@Test
@@ -61,4 +67,25 @@ public class StudentPageRepositoryTest {
 		assertNotNull(it);
 	}
 
+	@Test
+	public void testListStu() {
+		List<StudentBadDto> list = repository.listBadStu();
+		assertEquals(16, list.size());
+		StudentBadDto studentBadDto = list.get(0);
+		logger.info("studentBadDto:{}", studentBadDto);
+		assertEquals(1, studentBadDto.getStu().getId());
+		assertEquals(1, studentBadDto.getClz().getId());
+	}
+	@Test
+	public void testListStuGoodDto() {
+		List<StudentGoodDto> dtos = repository.listGoodStu();
+		
+		assertEquals(16, dtos.size());
+		logger.info("good student dto:{}",dtos);
+		StudentGoodDto dto = dtos.get(0);
+		assertEquals(1, dto.getSid());
+		assertEquals(1, dto.getClzId());
+	}
+	
+	
 }
