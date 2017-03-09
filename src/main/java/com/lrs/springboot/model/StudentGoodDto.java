@@ -2,6 +2,12 @@ package com.lrs.springboot.model;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+/**
+ * dto中不使用对象，只有属性 使用{@Query}注解来构造
+ * 
+ * @author Swedish-li
+ *
+ */
 public class StudentGoodDto {
 	private int sid;
 	private String sname;
@@ -11,7 +17,6 @@ public class StudentGoodDto {
 
 	public StudentGoodDto() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public StudentGoodDto(int sid, String sname, int clzId, String clzName, String grade) {

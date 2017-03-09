@@ -1,7 +1,12 @@
 package com.lrs.springboot.model;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
-
+/**
+ * 使用多条SQL查询
+ * 
+ * @author Swedish-li
+ *
+ */
 public class StudentBadDto {
 	private Student stu;
 	private Classroom clz;

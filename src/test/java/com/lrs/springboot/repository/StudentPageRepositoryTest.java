@@ -17,10 +17,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.test.annotation.Commit;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import com.lrs.springboot.model.ClassroomStuNumDto;
 import com.lrs.springboot.model.Student;
 import com.lrs.springboot.model.StudentBadDto;
 import com.lrs.springboot.model.StudentGoodDto;
@@ -43,7 +44,7 @@ public class StudentPageRepositoryTest {
 		PageRequest pageRequest = new PageRequest(1, 3);
 		Page<Student> page = repository.findByAge(12, pageRequest);
 		assertEquals(2, page.getTotalPages());
-		assertEquals(4, page.getTotalElements());
+		assertEquals(6, page.getTotalElements());
 		assertEquals(1, page.getNumber());
 	}
 
@@ -53,7 +54,7 @@ public class StudentPageRepositoryTest {
 		System.out.println(list);
 	}
 
-	@Commit
+	@Rollback
 	@Test
 	public void testSaveIterableOfS() {
 
@@ -70,22 +71,51 @@ public class StudentPageRepositoryTest {
 	@Test
 	public void testListStu() {
 		List<StudentBadDto> list = repository.listBadStu();
-		assertEquals(16, list.size());
+		assertEquals(24, list.size());
 		StudentBadDto studentBadDto = list.get(0);
 		logger.info("studentBadDto:{}", studentBadDto);
 		assertEquals(1, studentBadDto.getStu().getId());
 		assertEquals(1, studentBadDto.getClz().getId());
 	}
+
 	@Test
 	public void testListStuGoodDto() {
 		List<StudentGoodDto> dtos = repository.listGoodStu();
-		
-		assertEquals(16, dtos.size());
-		logger.info("good student dto:{}",dtos);
+
+		assertEquals(24, dtos.size());
+		logger.info("good student dto:{}", dtos);
 		StudentGoodDto dto = dtos.get(0);
 		assertEquals(1, dto.getSid());
 		assertEquals(1, dto.getClzId());
 	}
-	
-	
+
+	@Test
+	public void testListClassrooms() {
+		List<ClassroomStuNumDto> classStuNumDtoS = repository.listClassrooms();
+		assertEquals(1, classStuNumDtoS.size());
+		logger.info("classStuNumDtos:{}", classStuNumDtoS);
+		assertEquals(1, classStuNumDtoS.get(0).getCid());
+		assertEquals(24, classStuNumDtoS.get(0).getSnum());
+	}
+
+	/**
+	 * 必须映射Student的所有属性(不包括cid）
+	 */
+	@Test
+	public void testListStuByNativeSQL() {
+		List<Student> list = repository.ListStuByNativeQuery();
+		assertEquals(24, list.size());
+		assertEquals(1, list.get(0).getId());
+		logger.info("student list:{}", list);
+	}
+	/**
+	 * 查询结果中的列名不可相同
+	 */
+	@Test
+	public void testNativeSQL() {
+		List<Object[]> list = repository.listByNativeQuery();
+		assertEquals(24, list.size());
+		assertEquals(1, list.get(0)[0]);
+		logger.info("studentGoodDtos：{}", Arrays.toString(list.get(0)));
+	}
 }

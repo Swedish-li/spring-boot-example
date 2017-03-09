@@ -31,9 +31,9 @@ public class Student {
 	private String name;
 	private String address;
 	private int age;
-	/** classroom对象外键，不建议使用对象关联  */
+	/** classroom对象外键，不建议使用对象关联 */
 	private int cid;
-	
+
 	public int getId() {
 		return id;
 	}
@@ -65,7 +65,7 @@ public class Student {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
+
 	public int getCid() {
 		return cid;
 	}
