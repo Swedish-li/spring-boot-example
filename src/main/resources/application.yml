@@ -39,3 +39,14 @@ spring.jackson:
   locale: zh_CN
   time-zone: GMT+8
   joda-date-time-format: yyyy-MM-dd HH:mm:ss
+  
+mail:
+  host: #
+  port: 25
+  from: #
+  username: #
+  password: #
+  protocol: smtp
+  smtp:
+    auth: true
+    starttls-enable: true
