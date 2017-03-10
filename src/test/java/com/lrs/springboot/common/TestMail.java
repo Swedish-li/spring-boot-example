@@ -11,6 +11,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.lrs.springboot.config.MailProperties;
 
+/**
+ * 如果Spring Boot在优先级更高的位置找到了配置，那么它就会无视优先级低的配置。
+ * @author Swedish-li
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class TestMail {

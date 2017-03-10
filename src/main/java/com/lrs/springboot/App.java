@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * http://www.network-science.de/ascii/
  * http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
  * 
- * slf4j log4j logback关系详解和相关用法：http://www.cnblogs.com/Sinte-Beuve/p/5758971.html
+ * slf4j log4j
+ * logback关系详解和相关用法：http://www.cnblogs.com/Sinte-Beuve/p/5758971.html
  * 
  * @author Swedish-li
  *
@@ -31,6 +32,7 @@ public class App {
 	}
 
 	public static void main(String[] args) {
+		
 		SpringApplication.run(App.class, args);
 	}
 }
