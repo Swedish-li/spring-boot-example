@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.abel533.echarts.Option;
 import com.github.abel533.echarts.axis.CategoryAxis;
 import com.github.abel533.echarts.axis.ValueAxis;
+import com.github.abel533.echarts.code.Align;
 import com.github.abel533.echarts.code.Magic;
 import com.github.abel533.echarts.code.MarkType;
 import com.github.abel533.echarts.code.Tool;
@@ -21,12 +22,11 @@ import com.github.abel533.echarts.data.PointData;
 import com.github.abel533.echarts.feature.MagicType;
 import com.github.abel533.echarts.series.Bar;
 import com.lrs.springboot.model.User;
+
 /**
- * Echarts配置项手册：http://echarts.baidu.com/option.html
- * title:标题组件，包含主标题和副标题
- * legend:图例组件
- * toolbox:导出图片，数据视图，动态类型切换，数据区域缩放，重置
- * tooltip:提示框组件
+ * Echarts配置项手册：http://echarts.baidu.com/option.html title:标题组件，包含主标题和副标题
+ * legend:图例组件 toolbox:导出图片，数据视图，动态类型切换，数据区域缩放，重置 tooltip:提示框组件
+ * 
  * @author liruishi
  *
  */
@@ -89,6 +89,18 @@ public class EchartsExampleController {
 		bar2.markLine().data(new PointData().type(MarkType.average).name("平均值"));
 		// series：系列列表，每个系列通过type决定自己的类型
 		option.series(bar1, bar2);
+		return ResponseEntity.ok(option);
+	}
+
+	// 柱状图动画延迟
+	public ResponseEntity<Option> getBar2() {
+		Option option = new Option();
+		// 标题
+		option.title().text("柱状图动画延迟");
+		option.legend().data("bar", "bar2").align(Align.left);
+		option.toolbox().show(true).feature(Tool.saveAsImage, new MagicType(Magic.stack, Magic.tiled));
+		option.tooltip();
+		option.xAxis();
 		return ResponseEntity.ok(option);
 	}
 }
