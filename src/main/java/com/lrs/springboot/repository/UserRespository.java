@@ -16,11 +16,12 @@ import com.lrs.springboot.model.User;
  */
 public interface UserRespository extends CrudRepository<User, Long> {
 	User findByEmail(String email);
-	//使用Hql查询
+
+	// 使用Hql查询
 	@Query("select u from User u where u.id=?1")
 	User loadById(Long id);
-	
-	//Spring jpa data 自动实现的查询
+
+	// Spring jpa data 自动实现的查询
 	User readById(Long id);
 
 	List<User> getById(Long id);

@@ -20,6 +20,7 @@ public class Classroom {
 	@Length(max = 50)
 	private String name;
 	private String grade;
+
 	public int getId() {
 		return id;
 	}
@@ -43,6 +44,7 @@ public class Classroom {
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);

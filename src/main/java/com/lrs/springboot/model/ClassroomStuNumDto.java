@@ -1,9 +1,10 @@
 package com.lrs.springboot.model;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+
 /**
- * 班级信息
- * 学生人数
+ * 班级信息 学生人数
+ * 
  * @author Swedish-li
  *
  */

@@ -24,11 +24,11 @@ public class User {
 	@NotNull
 	private String email;
 	@NotNull
-	@NotEmpty(message="{name.not_null_err}")
-	@Length(min=5,max=10,message="{name.length_err}")
+	@NotEmpty(message = "{name.not_null_err}")
+	@Length(min = 5, max = 10, message = "{name.length_err}")
 	private String name;
 	@Transient
-	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date birth;
 
 	public User(long id) {
@@ -38,7 +38,7 @@ public class User {
 
 	public User() {
 	}
-	
+
 	public Date getBirth() {
 		return birth;
 	}

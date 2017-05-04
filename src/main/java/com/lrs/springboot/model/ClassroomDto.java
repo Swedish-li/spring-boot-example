@@ -41,6 +41,7 @@ public class ClassroomDto {
 	public void setStus(List<Student> stus) {
 		this.stus = stus;
 	}
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
