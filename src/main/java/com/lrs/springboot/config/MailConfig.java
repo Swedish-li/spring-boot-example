@@ -18,8 +18,8 @@ import com.lrs.springboot.config.MailProperties.Smtp;
  * @author Swedish-li
  *
  */
-@Configuration
-@EnableConfigurationProperties(MailProperties.class)
+// @Configuration
+// @EnableConfigurationProperties(MailProperties.class)
 public class MailConfig {
 	@Resource
 	private MailProperties mailProperties;

@@ -5,6 +5,7 @@
 	<artifactId>spring-boot-example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<common.lang3.version>3.5</common.lang3.version>
 	</properties>
@@ -50,6 +51,8 @@
 			<artifactId>ECharts</artifactId>
 			<version>3.0.0.2</version>
 		</dependency>
+
+		
 
 	</dependencies>
 	<build>
