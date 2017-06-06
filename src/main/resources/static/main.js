@@ -1,7 +1,11 @@
+const currentVersion = new Date().getTime()
+
 requirejs.config({
-	baseUrl : ctx + "/lib",
+	urlArgs: "v=" + currentVersion,
+	baseUrl : "/lib",
 	paths : {
 		"echarts" : "echarts"
 	}
 })
+
 requirejs(['../js/app'])

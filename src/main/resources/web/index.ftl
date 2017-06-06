@@ -1,4 +1,3 @@
-<#assign ctx = request.contextPath />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +18,7 @@
 			<div id="bar1" style="height:400px"></div>
 		</div>
 		<div class="wrapper">
-			这里是图表区2
+			<div id="bar2" style="height:400px"></div>
 		</div>
 		<footer class="footer">
 			<div class="container">
@@ -28,10 +27,7 @@
 		</footer>
 	</div>
 	
-	<script>
-		const ctx = '${ctx}'
-	</script>
-	<script src="http://apps.bdimg.com/libs/require.js/2.1.9/require.min.js" data-main="${ctx}/main"></script>
+	<script src="http://apps.bdimg.com/libs/require.js/2.1.9/require.min.js" data-main="/main"></script>
 		
 </body>
 </html>
