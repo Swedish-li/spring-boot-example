@@ -32,7 +32,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -60,6 +60,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				
+				<configuration>  
+                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>  
+                </configuration>
+				
 				<dependencies>
 					<dependency>
 						<groupId>org.springframework</groupId>
