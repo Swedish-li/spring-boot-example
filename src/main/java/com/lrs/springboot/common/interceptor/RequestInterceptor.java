@@ -1,4 +1,4 @@
-package com.lrs.springboot.config.interceptor;
+package com.lrs.springboot.common.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -5,7 +5,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.lrs.springboot.config.interceptor.RequestInterceptor;
+import com.lrs.springboot.common.interceptor.RequestInterceptor;
 
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter{
@@ -18,7 +18,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("static/**");
+		registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
 	}
 
 }
