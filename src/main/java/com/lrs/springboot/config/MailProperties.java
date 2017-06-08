@@ -1,7 +1,6 @@
 package com.lrs.springboot.config;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 
 // @ConfigurationProperties(ignoreUnknownFields = false, prefix = "mail")
 // @PropertySource("classpath:config/email.properties")
