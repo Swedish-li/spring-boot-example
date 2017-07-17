@@ -33,7 +33,6 @@ spring.freemarker:
   
  #Jackson配置
 spring.jackson: 
-  serialization-inclusion: non_null
   date-format: yyyy-MM-dd HH:mm:ss
   default-property-inclusion: non_null
   locale: zh_CN

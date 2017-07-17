@@ -17,10 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * --debug 参数可以查看Spring boot的启动信息
  * 
  * http://www.network-science.de/ascii/
- * http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
- * 
- * slf4j log4j
- * logback关系详解和相关用法：http://www.cnblogs.com/Sinte-Beuve/p/5758971.html
  * 
  * @author Swedish-li
  *
