@@ -1,8 +1,12 @@
+${AnsiStyle.BOLD}${AnsiColor.BRIGHT_RED}${AnsiBackground.BRIGHT_GREEN}
+${application.title}-${application.formatted-version}
+${AnsiColor.RED}${AnsiBackground.BLUE}
   _________                  .___.__       .__              .__  .__ 
  /   _____/_  _  __ ____   __| _/|__| _____|  |__           |  | |__|
  \_____  \\ \/ \/ // __ \ / __ | |  |/  ___/  |  \   ______ |  | |  |
  /        \\     /\  ___// /_/ | |  |\___ \|   Y  \ /_____/ |  |_|  |
 /_______  / \/\_/  \___  >____ | |__/____  >___|  /         |____/__|
         \/             \/     \/         \/     \/                   
-
-        \(^O^)/    Spring-Boot ${spring-boot.version}
+        \(^O^)/   Spring-Boot ${spring-boot.formatted-version}
+        
+${AnsiColor.DEFAULT}${AnsiBackground.DEFAULT}${AnsiStyle.NORMAL}
