@@ -28,5 +28,14 @@ public class EmployeeMapperTest {
 		assertThat(employee.state, equalTo("1"));
 
 	}
+	
+	@Test
+	public void testSelectById() {
+		Employee employee = mapper.selectById(1);
+		
+		assertThat(employee.city, equalTo("上海"));
+		assertThat(employee.name, equalTo("王三"));
+		assertThat(employee.state, equalTo("0"));
+	}
 
 }

@@ -1,7 +1,11 @@
 spring.datasource.schema: classpath:import.sql
 
+## Mybatis 配置
+mybatis:
+  typeAliasesPackage: com.lrs.boot.mybatis.model
+  mapperLocations: classpath:mapper/*.xml
+
 logging:
-  
   level:
     root: WARN
     com.lrs.boot.mybatis.mapper: TRACE
