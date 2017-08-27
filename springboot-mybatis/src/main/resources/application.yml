@@ -1,0 +1,8 @@
+spring.datasource.schema: classpath:import.sql
+
+logging:
+  
+  level:
+    root: WARN
+    com.lrs.boot.mybatis.mapper: TRACE
+  
