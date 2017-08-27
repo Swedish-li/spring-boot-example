@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{36}.%M\(%line\) - %msg%n</Pattern>
+			<charset class="java.nio.charset.Charset">utf8</charset>
+			<!-- <charset class="java.nio.charset.Charset">GBK</charset> -->
+		</encoder>
+	</appender>
+	
+	<root level="ERROR">
+		<appender-ref ref="CONSOLE" />
+	</root>
+
+</configuration>
