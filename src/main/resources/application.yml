@@ -3,7 +3,7 @@ server:
 
 #spring.output.ansi.enabled=ALWAYS
 
-spring:
+spring: 
     output.ansi.enabled: ALWAYS
     main:
         banner-mode: "CONSOLE"
@@ -62,4 +62,4 @@ mail:
     protocol: 
     auth: true
     starttls-enable: true
-  
+    
