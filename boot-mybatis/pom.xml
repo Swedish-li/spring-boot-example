@@ -8,7 +8,7 @@
 	</parent>
 
 	<groupId>com.lrs.boot.mybatis</groupId>
-	<artifactId>springboot-mybatis</artifactId>
+	<artifactId>boot-mybatis</artifactId>
 
 	<dependencies>
 		<dependency>
