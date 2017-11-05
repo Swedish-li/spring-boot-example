@@ -99,5 +99,6 @@
 	<modules>
 		<module>boot-mybatis</module>
 		<module>boot-swagger2</module>
+		<module>boot-scheduler</module>
 	</modules>
 </project>

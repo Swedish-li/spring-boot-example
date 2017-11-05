@@ -1,0 +1,6 @@
+
+# 定时器配置
+job: 
+  fixedDelay: 10000
+  cron: 0 17 22 * * ?
+  fixedRate: 10000
