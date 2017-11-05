@@ -10,14 +10,14 @@ public class ExampleJob {
 
 	private final static Logger log = LoggerFactory.getLogger(ExampleJob.class);
 
-	// 延迟10秒执行
+	// 第一次任务结束到下一次任务开始间隔
 	@Scheduled(fixedDelayString = "${job.fixedDelay}")
 	public void fixedDelayJob() {
-		log.info("延迟10秒执行的任务！");
+		log.info("间隔10秒执行任务！");
 	}
 
-	// 固定间隔执行
-	@Scheduled(fixedRateString = "${job.fixedRate}")
+	// 任务执行开始间隔
+	@Scheduled(initialDelay = 1000, fixedRateString = "${job.fixedRate}")
 	public void fixedRateJob() {
 		log.info("固定间隔20秒执行一次！");
 	}
