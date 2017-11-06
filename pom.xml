@@ -100,5 +100,6 @@
 		<module>boot-mybatis</module>
 		<module>boot-swagger2</module>
 		<module>boot-scheduler</module>
+		<module>boot-batch</module>
 	</modules>
 </project>
