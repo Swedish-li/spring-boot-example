@@ -35,7 +35,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
+            <optional>true</optional>
 		</dependency>
 	</dependencies>
 
@@ -49,7 +49,7 @@
 					<dependency>
 						<groupId>org.springframework</groupId>
 						<artifactId>springloaded</artifactId>
-						<version>1.2.6.RELEASE</version>
+						<version>1.2.8.RELEASE</version>
 					</dependency>
 				</dependencies>
 			</plugin>

@@ -13,7 +13,7 @@ public class App {
 
 	@GetMapping("index")
 	public String index(HttpServletRequest req) {
-		return "Hello World!";
+		return "Hello Spring Example !";
 	}
 
 	public static void main(String[] args) {
