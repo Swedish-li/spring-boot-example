@@ -107,5 +107,6 @@
 		<module>boot-scheduler</module>
 		<module>boot-batch</module>
 		<module>boot-devtools</module>
-	</modules>
+        <module>boot-web</module>
+    </modules>
 </project>
