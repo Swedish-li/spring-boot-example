@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Echo Websocket</title>
+    <script src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
+    <script>
+
+function websocketTest(){
+  let ws = new SockJS('/echo')
+  ws.onopen = function () {
+    console.log('Info: WebSocket connection opened.')
+    ws.send("Hello Websocket!");
+  }
+  ws.onmessage = function (event) {
+    console.log('Received: ' + event.data);
+    // 收到信息后关闭
+    ws.close()
+  }
+  ws.onclose = function () {
+    console.log('Info: WebSocket connection closed.');
+  }
+}
+
+function reverseWebsocket(){
+  let ws = new WebSocket('ws://' + window.location.host +'/reverse')
+
+  ws.onopen = function () {
+    console.log('Info: WebSocket connection opened.')
+    ws.send("Hello Websocket!");
+  }
+  ws.onmessage = function (event) {
+    console.log('Received: ' + event.data);
+    // 收到信息后关闭
+    ws.close()
+  }
+  ws.onclose = function () {
+    console.log('Info: WebSocket connection closed.');
+  }
+}
+
+    </script>
+</head>
+<body>
+<button onclick="websocketTest()">echo Websocket</button>
+<hr>
+<button onclick="reverseWebsocket()">reverse Websocket</button>
+
+</body>
+</html>

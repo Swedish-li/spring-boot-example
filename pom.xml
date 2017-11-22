@@ -19,7 +19,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.6.RELEASE</version>
+		<version>1.5.8.RELEASE</version>
 	</parent>
 
 	<dependencyManagement>
@@ -108,5 +108,6 @@
 		<module>boot-batch</module>
 		<module>boot-devtools</module>
         <module>boot-web</module>
-    </modules>
+		<module>boot-websocket</module>
+	</modules>
 </project>
