@@ -41,6 +41,13 @@
 				<scope>test</scope>
 			</dependency>
 
+
+            <dependency>
+                <groupId>biz.paluch.redis</groupId>
+                <artifactId>lettuce</artifactId>
+                <version>4.2.2.Final</version>
+            </dependency>
+
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-databind</artifactId>
@@ -109,5 +116,6 @@
 		<module>boot-devtools</module>
         <module>boot-web</module>
 		<module>boot-websocket</module>
-	</modules>
+        <module>boot-data-redis</module>
+    </modules>
 </project>
