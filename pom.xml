@@ -117,5 +117,6 @@
         <module>boot-web</module>
 		<module>boot-websocket</module>
         <module>boot-data-redis</module>
+        <module>boot-solr</module>
     </modules>
 </project>
