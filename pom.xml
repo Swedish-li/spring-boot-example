@@ -118,5 +118,6 @@
 		<module>boot-websocket</module>
         <module>boot-data-redis</module>
         <module>boot-solr</module>
+        <module>boot-amqp</module>
     </modules>
 </project>
